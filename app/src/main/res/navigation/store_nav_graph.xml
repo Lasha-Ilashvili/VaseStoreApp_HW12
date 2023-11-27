@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/store_nav_graph"
+    app:startDestination="@id/vaseListFragment">
+
+    <fragment
+        android:id="@+id/vaseListFragment"
+        android:name="com.example.vasestoreapp_hw12.fragment.VaseListFragment"
+        android:label="fragment_vase"
+        tools:layout="@layout/fragment_vase_list" >
+        <action
+            android:id="@+id/action_vaseListFragment_to_vasePageFragment"
+            app:destination="@id/vasePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vasePageFragment"
+        android:name="com.example.vasestoreapp_hw12.fragment.VasePageFragment"
+        android:label="fragment_vase_page"
+        tools:layout="@layout/fragment_vase_page" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+</navigation>

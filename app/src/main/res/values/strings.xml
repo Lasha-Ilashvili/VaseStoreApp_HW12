@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VaseStoreApp_HW12</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sold">sold</string>
+    <string name="flower_vase">Flower Vase</string>
+    <string name="search">Search</string>
+</resources>

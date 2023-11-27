@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivListVase"
+        android:layout_width="wrap_content"
+        android:layout_height="174dp"
+        android:background="@drawable/vase_list_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vase_img1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="120dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_background"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="@+id/ivListVase"
+        app:layout_constraintTop_toTopOf="@+id/ivListVase"
+        app:srcCompat="@drawable/ic_heart" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvListVaseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivListVase"
+        tools:background="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:text="@string/flower_vase"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvListVaseTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvListVaseTitle"
+        tools:background="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivListVaseStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvListVaseTitle"
+        app:srcCompat="@drawable/ic_rating_star" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvListVaseRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/urbanist_medium"
+
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/ivListVaseStar"
+        app:layout_constraintTop_toBottomOf="@+id/tvListVaseTitle"
+        tools:background="@color/black" />
+
+    <View
+        android:id="@+id/vListLineVertical"
+        android:layout_width="1dp"
+        android:layout_height="20dp"
+        android:layout_margin="12dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/tvListVaseRating"
+        app:layout_constraintTop_toBottomOf="@+id/tvListVaseTitle"
+        tools:background="@color/black" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/sold_backgournd"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        app:layout_constraintStart_toEndOf="@+id/vListLineVertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvListVaseTitle">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvListVaseSoldCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_medium"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/sold"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvListVasePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivListVaseStar"
+        tools:background="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
