@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.VasePageFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivPageVase"
         android:layout_width="wrap_content"
-        android:layout_height="240dp"
-        android:layout_gravity="start"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
         android:background="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,22 +20,21 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@color/dark_gray"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="20dp">
+        android:padding="20dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPageVaseTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
             android:fontFamily="@font/urbanist_medium"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="@color/black" />
+            tools:text="Marble" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -44,17 +43,25 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/flower_vase"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/tvPageVaseTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circle_background"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="@color/black" />
+            app:srcCompat="@drawable/ic_heart" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llSold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/llSold"
-            android:layout_margin="8dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/sold_backgournd"
             android:orientation="horizontal"
             android:paddingHorizontal="12dp"
@@ -68,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/urbanist_medium"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                tools:text="8,563" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -85,50 +93,241 @@
             android:id="@+id/ivPageVaseStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
 
             app:layout_constraintStart_toEndOf="@+id/llSold"
             app:layout_constraintTop_toTopOf="@+id/llSold"
             app:srcCompat="@drawable/ic_rating_star" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvListVaseRating"
+            android:id="@+id/tvPageVaseRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/urbanist_medium"
-
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/ivPageVaseStar"
-            app:layout_constraintTop_toBottomOf="@+id/tvPageVaseTitle"
-            tools:background="@color/black" />
-
-        <View
-            android:id="@+id/vListLineVertical"
-            android:layout_width="1dp"
-            android:layout_height="20dp"
-            android:layout_margin="12dp"
-            android:background="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/tvListVaseRating"
-            app:layout_constraintTop_toBottomOf="@+id/tvListVaseTitle"
-            tools:background="@color/black" />
-
-
+            app:layout_constraintTop_toTopOf="@+id/llSold"
+            tools:text="4.7" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvListVasePrice"
+            android:id="@+id/tvPageVaseReviewScope"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="("
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/tvPageVaseRating"
+            app:layout_constraintTop_toTopOf="@+id/llSold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_page_vase_review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/urbanist_medium"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/tvPageVaseReviewScope"
+            app:layout_constraintTop_toTopOf="@+id/tvPageVaseReviewScope"
+            tools:text="7,458" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/reviews"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_page_vase_review_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_page_vase_review_count" />
+
+        <View
+            android:id="@+id/vPageLineHorizontal1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llSold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/description"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivListVaseStar"
-            tools:background="@color/black" />
+            app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/description_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/color"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/colorRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvColor" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/quantity"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colorRecyclerView" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@drawable/oval_quantity_background"
+            android:backgroundTint="@color/gray"
+            android:orientation="horizontal"
+            android:paddingHorizontal="28dp"
+            android:paddingVertical="6dp"
+            app:layout_constraintStart_toEndOf="@+id/tvQuantity"
+            app:layout_constraintTop_toBottomOf="@+id/colorRecyclerView">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ibMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_minus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                app:srcCompat="@drawable/ic_plus" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/vPageLineHorizontal2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llQuantity" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/total_price"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="$170.00"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalPriceText" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/oval_add_to_cart_background"
+            android:backgroundTint="@color/white"
+            android:orientation="horizontal"
+            android:paddingHorizontal="58dp"
+            android:paddingVertical="20dp"
+            app:layout_constraintStart_toEndOf="@+id/tvQuantity"
+            app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal2">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_bag" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

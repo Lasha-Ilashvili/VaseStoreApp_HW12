@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
+import com.example.vasestoreapp_hw12.data.Datasource
 import com.example.vasestoreapp_hw12.databinding.FragmentVasePageBinding
 
 class VasePageFragment : Fragment() {
 
     private var _binding: FragmentVasePageBinding? = null
     private val binding get() = _binding!!
+
+    private val args: VasePageFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +27,23 @@ class VasePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setUpPage()
+//        setUpListener()
+    }
+
+    private fun setUpPage() {
+        val vase = Datasource.vases[args.title]!!
+
+        with(binding) {
+            ivPageVase.setImageResource(vase.image)
+            tvPageVaseTitle.text = vase.title
+            tvPageVaseSoldCount.text = vase.soldCount
+            tvPageVaseReviewCount.text = vase.reviewCount
+        }
+    }
+
+    private fun setUpListener() {
+        TODO("Not yet implemented")
     }
 
     override fun onDestroyView() {

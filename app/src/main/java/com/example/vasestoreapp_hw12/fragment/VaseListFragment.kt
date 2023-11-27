@@ -55,12 +55,15 @@ class VaseListFragment : Fragment() {
     private fun setUpSearch() {
         binding.etSearch.addTextChangedListener { title: Editable? ->
             adapter.submitList(
-                title?.let { searchedText: Editable ->
-                    vaseList.filter { it.title.contains(searchedText, ignoreCase = true) }
-                } ?: vaseList
+                title?.let { getSearchedVase(it) } ?: vaseList
             )
         }
     }
+
+    private fun getSearchedVase(searchedVase: Editable) =
+        vaseList.filter {
+            it.title.contains(searchedVase, ignoreCase = true)
+        }
 
     override fun onDestroyView() {
         super.onDestroyView()

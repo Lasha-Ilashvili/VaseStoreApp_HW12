@@ -5,5 +5,6 @@ data class Vase(
     val title: String,
     val rating: String,
     val soldCount: String,
-    val price: String
+    val price: String,
+    val reviewCount: String
 )
