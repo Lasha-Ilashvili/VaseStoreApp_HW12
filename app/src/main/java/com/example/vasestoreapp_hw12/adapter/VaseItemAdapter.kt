@@ -9,8 +9,9 @@ import com.example.vasestoreapp_hw12.data.Datasource
 import com.example.vasestoreapp_hw12.databinding.VaseListItemBinding
 import com.example.vasestoreapp_hw12.model.Vase
 
-class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(
-    object : DiffUtil.ItemCallback<Vase>() {
+class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(VaseDiffUtil) {
+    
+    object VaseDiffUtil : DiffUtil.ItemCallback<Vase>() {
         override fun areItemsTheSame(oldItem: Vase, newItem: Vase): Boolean {
             return oldItem.title == newItem.title
         }
@@ -20,7 +21,6 @@ class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(
         }
 
     }
-) {
 
     var itemOnClick: ((String) -> Unit)? = null
 
