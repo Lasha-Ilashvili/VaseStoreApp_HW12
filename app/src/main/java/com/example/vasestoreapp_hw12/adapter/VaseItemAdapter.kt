@@ -10,7 +10,7 @@ import com.example.vasestoreapp_hw12.databinding.VaseListItemBinding
 import com.example.vasestoreapp_hw12.model.Vase
 
 class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(VaseDiffUtil) {
-    
+
     object VaseDiffUtil : DiffUtil.ItemCallback<Vase>() {
         override fun areItemsTheSame(oldItem: Vase, newItem: Vase): Boolean {
             return oldItem.title == newItem.title
@@ -37,19 +37,22 @@ class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(Va
 
     inner class VaseItemViewHolder(private val binding: VaseListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
-            val vase = currentList[adapterPosition]
 
+        private val vase = currentList[adapterPosition]
+
+        init {
+            binding.ivListVase.setOnClickListener {
+                itemOnClick?.invoke(vase.title)
+            }
+        }
+
+        fun bind() {
             with(binding) {
                 ivListVase.setImageResource(vase.image)
                 tvListVaseTitle.text = vase.title
                 tvListVaseRating.text = vase.rating
                 tvListVaseSoldCount.text = vase.soldCount
                 Datasource.setPricePrecision(tvListVasePrice, vase.price)
-
-                ivListVase.setOnClickListener {
-                    itemOnClick?.invoke(vase.title)
-                }
             }
         }
     }
