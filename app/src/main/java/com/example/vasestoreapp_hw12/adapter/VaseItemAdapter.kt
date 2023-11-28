@@ -38,7 +38,7 @@ class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(Va
     inner class VaseItemViewHolder(private val binding: VaseListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        private val vase = currentList[adapterPosition]
+        private lateinit var vase: Vase
 
         init {
             binding.ivListVase.setOnClickListener {
@@ -47,6 +47,8 @@ class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(Va
         }
 
         fun bind() {
+            vase = currentList[adapterPosition]
+
             with(binding) {
                 ivListVase.setImageResource(vase.image)
                 tvListVaseTitle.text = vase.title

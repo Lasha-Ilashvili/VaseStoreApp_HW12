@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.vasestoreapp_hw12.R.drawable.ic_check
 import com.example.vasestoreapp_hw12.adapter.VaseColorItemAdapter
@@ -36,7 +37,7 @@ class VasePageFragment : Fragment() {
 
         setUpPage()
         setUpRecycler()
-        setUpListener()
+        setUpListeners()
     }
 
     private fun setUpPage() {
@@ -77,10 +78,14 @@ class VasePageFragment : Fragment() {
     }
 
 
-    private fun setUpListener() {
+    private fun setUpListeners() {
         val vase = Datasource.vases[args.title]!!
 
         with(binding) {
+
+            btnBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
 
             ivMinus.setOnClickListener {
                 if (tvNumber.text != "1") {
@@ -108,5 +113,6 @@ class VasePageFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        setCheck(0)
     }
 }
