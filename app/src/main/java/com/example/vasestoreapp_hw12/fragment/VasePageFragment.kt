@@ -28,7 +28,7 @@ class VasePageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpPage()
-//        setUpListener()
+        setUpListener()
     }
 
     private fun setUpPage() {
@@ -39,11 +39,33 @@ class VasePageFragment : Fragment() {
             tvPageVaseTitle.text = vase.title
             tvPageVaseSoldCount.text = vase.soldCount
             tvPageVaseReviewCount.text = vase.reviewCount
+            "%.2f".format(vase.price).also {
+                tvTotalPrice.text = it
+            }
         }
     }
 
     private fun setUpListener() {
-        TODO("Not yet implemented")
+        val vase = Datasource.vases[args.title]!!
+
+        with(binding) {
+
+                ivMinus.setOnClickListener {
+                    if (tvNumber.text.toString().toInt() > 1) {
+                    "%.2f".format(tvTotalPrice.text.toString().toDouble() - vase.price).also {
+                        tvTotalPrice.text = it
+                    }
+                    tvNumber.text = (tvNumber.text.toString().toInt() - 1).toString()
+                }
+            }
+
+            ivPlus.setOnClickListener {
+                "%.2f".format(tvTotalPrice.text.toString().toDouble() + vase.price).also {
+                    tvTotalPrice.text = it
+                }
+                tvNumber.text = (tvNumber.text.toString().toInt() + 1).toString()
+            }
+        }
     }
 
     override fun onDestroyView() {

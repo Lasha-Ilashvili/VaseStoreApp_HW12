@@ -44,7 +44,10 @@ class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(
                 tvListVaseTitle.text = vase.title
                 tvListVaseRating.text = vase.rating
                 tvListVaseSoldCount.text = vase.soldCount
-                tvListVasePrice.text = vase.price
+
+                "%.2f".format(vase.price).also {
+                    tvListVasePrice.text = it
+                }
 
                 ivListVase.setOnClickListener {
                     itemOnClick?.invoke(vase.title)

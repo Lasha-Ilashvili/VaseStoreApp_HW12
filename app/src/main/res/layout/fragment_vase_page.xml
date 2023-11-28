@@ -232,7 +232,7 @@
             app:layout_constraintTop_toBottomOf="@+id/colorRecyclerView">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ibMinus"
+                android:id="@+id/ivMinus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -281,17 +281,30 @@
             app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal2" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTotalPrice"
+            android:id="@+id/tvTotalPriceDollar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/urbanist_medium"
-            android:text="$170.00"
+            android:text="@string/dollar"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTotalPriceText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_medium"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalPriceDollar"
+            app:layout_constraintTop_toTopOf="@+id/tvTotalPriceDollar"
+            tools:background="@color/dark_gray"
+            tools:text="85.00" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llAddToCart"

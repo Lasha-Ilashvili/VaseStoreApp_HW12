@@ -120,6 +120,20 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvListVaseDollar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="@string/dollar"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivListVaseStar"
+        tools:background="@color/dark_gray" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvListVasePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,9 +141,9 @@
         android:fontFamily="@font/urbanist_medium"
         android:textColor="@color/white"
         android:textSize="18sp"
-        tools:text="$85.00"
+        tools:text="85.00"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvListVaseDollar"
         app:layout_constraintTop_toBottomOf="@+id/ivListVaseStar"
         tools:background="@color/dark_gray" />
 
