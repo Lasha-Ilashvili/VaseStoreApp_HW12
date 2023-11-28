@@ -10,8 +10,8 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivPageVase"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,8 +19,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:background="@color/dark_gray"
         android:padding="20dp">
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/urbanist_medium"
             android:textColor="@color/white"
-            android:textSize="36sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +43,7 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/flower_vase"
             android:textColor="@color/white"
-            android:textSize="36sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/tvPageVaseTitle"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:background="@drawable/sold_backgournd"
+            android:background="@drawable/sold_background"
             android:orientation="horizontal"
             android:paddingHorizontal="12dp"
             android:paddingVertical="6dp"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/urbanist_medium"
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 tools:text="8,563" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -85,7 +85,7 @@
                 android:fontFamily="@font/urbanist_medium"
                 android:text="@string/sold"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -105,10 +105,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/urbanist_medium"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/ivPageVaseStar"
             app:layout_constraintTop_toTopOf="@+id/llSold"
             tools:text="4.7" />
@@ -118,11 +118,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/urbanist_medium"
             android:text="("
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/tvPageVaseRating"
             app:layout_constraintTop_toTopOf="@+id/llSold" />
 
@@ -132,7 +132,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/urbanist_medium"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/tvPageVaseReviewScope"
             app:layout_constraintTop_toTopOf="@+id/tvPageVaseReviewScope"
             tools:text="7,458" />
@@ -144,7 +144,7 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/reviews"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/tv_page_vase_review_count"
             app:layout_constraintTop_toTopOf="@+id/tv_page_vase_review_count" />
 
@@ -165,7 +165,7 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/description"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal1" />
@@ -178,7 +178,7 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/description_text"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
 
@@ -190,7 +190,7 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/color"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescriptionText" />
@@ -209,11 +209,11 @@
             android:id="@+id/tvQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="34dp"
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/quantity"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/colorRecyclerView" />
@@ -226,8 +226,8 @@
             android:background="@drawable/oval_quantity_background"
             android:backgroundTint="@color/gray"
             android:orientation="horizontal"
-            android:paddingHorizontal="28dp"
-            android:paddingVertical="6dp"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="8dp"
             app:layout_constraintStart_toEndOf="@+id/tvQuantity"
             app:layout_constraintTop_toBottomOf="@+id/colorRecyclerView">
 
@@ -243,7 +243,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="20dp"
                 android:fontFamily="@font/urbanist_medium"
                 android:text="1"
                 android:textColor="@color/white"
@@ -254,7 +254,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="20dp"
                 app:srcCompat="@drawable/ic_plus" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -276,7 +276,7 @@
             android:fontFamily="@font/urbanist_medium"
             android:text="@string/total_price"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal2" />
 
@@ -310,14 +310,13 @@
             android:id="@+id/llAddToCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
             android:layout_marginTop="28dp"
             android:background="@drawable/oval_add_to_cart_background"
             android:backgroundTint="@color/white"
             android:orientation="horizontal"
-            android:paddingHorizontal="58dp"
-            android:paddingVertical="20dp"
-            app:layout_constraintStart_toEndOf="@+id/tvQuantity"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vPageLineHorizontal2">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -336,7 +335,7 @@
                 android:fontFamily="@font/urbanist_medium"
                 android:text="@string/add_to_cart"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

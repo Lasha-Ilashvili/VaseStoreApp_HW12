@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vasestoreapp_hw12.data.Datasource
 import com.example.vasestoreapp_hw12.databinding.VaseListItemBinding
 import com.example.vasestoreapp_hw12.model.Vase
 
@@ -44,10 +45,7 @@ class VaseItemAdapter : ListAdapter<Vase, VaseItemAdapter.VaseItemViewHolder>(
                 tvListVaseTitle.text = vase.title
                 tvListVaseRating.text = vase.rating
                 tvListVaseSoldCount.text = vase.soldCount
-
-                "%.2f".format(vase.price).also {
-                    tvListVasePrice.text = it
-                }
+                Datasource.setPricePrecision(tvListVasePrice, vase.price)
 
                 ivListVase.setOnClickListener {
                     itemOnClick?.invoke(vase.title)
