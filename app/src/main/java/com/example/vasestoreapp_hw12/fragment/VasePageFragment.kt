@@ -46,6 +46,7 @@ class VasePageFragment : Fragment() {
         with(binding) {
             ivPageVase.setImageResource(vase.image)
             tvPageVaseTitle.text = vase.title
+            tvPageVaseRating.text = vase.rating
             tvPageVaseSoldCount.text = vase.soldCount
             tvPageVaseReviewCount.text = vase.reviewCount
             Datasource.setPricePrecision(tvTotalPrice, vase.price)
